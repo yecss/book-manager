@@ -1,0 +1,5 @@
+[
+  {"id":1,"bookname":"vue前端设计","price":22},
+  {"id":2,"bookname":"你不知道的JavaScript","price":252},
+  {"id":3,"bookname":"vue设计思想","price":65}
+]
