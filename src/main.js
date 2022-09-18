@@ -6,6 +6,8 @@ import router from "./router/index"
 import permission from "./router/permission"
 Vue.config.productionTip = false
 
+import * as echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 
 Vue.use(ElementUI);
 new Vue({

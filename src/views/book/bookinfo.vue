@@ -14,13 +14,19 @@
           style="width: 150px"
         ></el-input>
       </el-form-item>
-      <el-form-item label="出版社" size="mini" prop="press">
+      <el-form-item label="出版社" size="mini" prop="press" @click.right.prevent.native="dialogPressVisible=true">
         <el-input
           v-model="searchWhere.press"
           placeholder="出版社"
           style="width: 150px"
         ></el-input>
       </el-form-item>
+
+      <!-- 选择出版社对话框 -->
+      <el-dialog title="选择出版社" :visible.sync="dialogPressVisible" width="800px">
+        <press @sendData="getData"></press>
+      </el-dialog>
+
       <el-form-item label="图书类型" size="mini" prop="bookType">
         <el-select
           v-model="searchWhere.bookType"
@@ -178,10 +184,12 @@ const bookTypeOptions = [
   { type: 4, name: "移动开发类" },
 ];
 import bookinfoApi from "@/api/bookinfo";
+import press from "@/views/press"
 export default {
   name: "BookInfo",
   data() {
     return {
+      dialogPressVisible:false,
       bookTypeOptions: bookTypeOptions,
       bookinfolist: [],
       total: 0,
@@ -277,6 +285,9 @@ export default {
   created() {
     // 数据需要在组件初始化后就要获取
     this.fetchData();
+  },
+  components:{
+    press
   },
   methods: {
     handleEdit(id) {
@@ -393,6 +404,11 @@ export default {
         }
       });
     },
+    getData(currentRow){
+      this.searchWhere.press = currentRow.pressName
+      this.searchWhere.id = currentRow.id
+      this.dialogPressVisible = false
+    }
   },
   filters: {
     bookTypeFilter(type) {

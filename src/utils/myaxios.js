@@ -1,2 +1,16 @@
-import axios from "axios"
-axios.get('/data.json').then((resp)=>{console.log(resp.data)}).catch((err)=>{console.log("请求失败")})
+import { Loading } from 'element-ui'
+import axios from 'axios'
+const myaxios = axios.create({
+  timeout: 3000,
+})
+myaxios.interceptors.request.use(
+  (config) => {
+    Loading.service({
+      target: '.main',
+    })
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
