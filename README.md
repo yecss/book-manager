@@ -1,24 +1,34 @@
 # book-manager
 
-## Project setup
+## 项目初始化
+
+### Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+Compiles and hot-reloads for development
+
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+Compiles and minifies for production
+
 ```
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+## 预览
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### 登录页
+
+![](https://cdn.jsdelivr.net/gh/yecss/imageStore@main/picgo/Snipaste_2022-09-20_16-04-21.jpg)
+
+#### 图书展示页
+
+![](https://cdn.jsdelivr.net/gh/yecss/imageStore@main/picgo/Snipaste_2022-09-20_16-04-34.jpg)
+
+#### 数据可视化
+
+![](https://cdn.jsdelivr.net/gh/yecss/imageStore@main/picgo/Snipaste_2022-09-20_16-04-42.jpg)
